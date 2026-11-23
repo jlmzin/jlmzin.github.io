@@ -61,8 +61,8 @@ const commands = {
   ],
   skills: () => [
     ["output-title", "TECNOLOGIAS & FERRAMENTAS"],
-    ["normal", "Python · Java · C# · JavaScript · HTML · CSS"],
-    ["normal", ".NET · Git · PostgreSQL · Docker · Ansible"],
+    ["normal", "Python · Java · JavaScript · HTML · CSS"],
+    ["normal", "Git · PostgreSQL · Docker · Ansible"],
     ["normal", "Desenvolvimento · Infraestrutura · Redes · Automação"],
   ],
   contact: () => [
