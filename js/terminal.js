@@ -20,8 +20,8 @@ const about = [
     "Possuo experiência prática em suporte técnico, montagem e manutenção de computadores, configuração de dispositivos, monitoramento de redes, diagnóstico e resolução de problemas técnicos.",
   ],
   ["output-title", "STACK & FERRAMENTAS"],
-  ["normal", "Python · Java · C# · JavaScript · HTML · CSS"],
-  ["normal", ".NET · Git · PostgreSQL · Docker"],
+  ["normal", "Python · JavaScript · HTML · CSS"],
+  ["normal", "Git · PostgreSQL · Docker"],
   ["output-title", "ÁREAS DE INTERESSE"],
   ["normal", "DevOps · Computação em nuvem · Infraestrutura como código (IaC)"],
   [
@@ -61,7 +61,7 @@ const commands = {
   ],
   skills: () => [
     ["output-title", "TECNOLOGIAS & FERRAMENTAS"],
-    ["normal", "Python · Java · JavaScript · HTML · CSS"],
+    ["normal", "Python · JavaScript · HTML · CSS"],
     ["normal", "Git · PostgreSQL · Docker · Ansible"],
     ["normal", "Desenvolvimento · Infraestrutura · Redes · Automação"],
   ],
