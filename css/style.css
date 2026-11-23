@@ -536,10 +536,6 @@ button:focus-visible {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    .tech-card:last-child {
-        grid-column: 1/-1
-    }
-
     body {
         padding: 18px 13px
     }
