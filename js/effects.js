@@ -1,34 +1,87 @@
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const nameElement = document.querySelector("#typed-name");
+const statusElement = document.querySelector("#identity-status");
+const roleElement = document.querySelector("#typed-role");
+const roleElement2 = document.querySelector("#typed-role-2");
+const roleSeparator = document.querySelector("#role-sep");
+
 function typeText(el, text, speed, done) {
   if (reduced) {
     el.textContent = text;
     done?.();
     return;
   }
+
   let i = 0;
-  const t = setInterval(() => {
+  const timer = setInterval(() => {
     el.textContent = text.slice(0, ++i);
     if (i >= text.length) {
-      clearInterval(t);
+      clearInterval(timer);
       done?.();
     }
   }, speed);
 }
-typeText(document.querySelector("#typed-name"), "Juan Lima Machado", 72, () =>
-  typeText(
-    document.querySelector("#typed-role"),
-    "Computer Science",
-    60,
-    () => {
-      document.querySelector("#role-sep").hidden = false;
-      typeText(
-        document.querySelector("#typed-role-2"),
-        "Developer in Progress",
-        60,
-      );
-    },
-  ),
-);
+
+function eraseTo(el, target, speed, done) {
+  if (reduced) {
+    el.textContent = target;
+    done?.();
+    return;
+  }
+
+  const timer = setInterval(() => {
+    el.textContent = el.textContent.slice(0, -1);
+    if (el.textContent.length <= target.length) {
+      clearInterval(timer);
+      el.textContent = target;
+      done?.();
+    }
+  }, speed);
+}
+
+function showStatus(message, type = "info") {
+  statusElement.textContent = message;
+  statusElement.dataset.state = type;
+}
+
+function startRoles() {
+  typeText(roleElement, "Computer Science", 60, () => {
+    roleSeparator.hidden = false;
+    typeText(roleElement2, "Developer in Progress", 60);
+  });
+}
+
+function startIdentityAnimation() {
+  if (reduced) {
+    nameElement.textContent = "JLM.DEV";
+    startRoles();
+    return;
+  }
+
+  nameElement.textContent = "";
+  showStatus("[SYSTEM] Identifying user...");
+
+  // Digita somente "Juan Lim": o nome completo nunca é exibido.
+  typeText(nameElement, "Juan Lim", 110, () => {
+    setTimeout(() => {
+      showStatus("[ERROR] Identity mismatch detected.", "error");
+      setTimeout(() => {
+        showStatus("[SYSTEM] Correcting identity...");
+        eraseTo(nameElement, "", 85, () => {
+          setTimeout(() => {
+            typeText(nameElement, "JLM.DEV", 125, () => {
+              showStatus("[SUCCESS] Identity corrected.", "success");
+              setTimeout(startRoles, 350);
+            });
+          }, 300);
+        });
+      }, 1100);
+    }, 500);
+  });
+}
+
+startIdentityAnimation();
 const items = document.querySelectorAll(".reveal");
 if (reduced || !("IntersectionObserver" in window))
   items.forEach((x) => x.classList.add("is-visible"));

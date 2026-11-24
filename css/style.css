@@ -83,6 +83,23 @@ body {
 }
 
 .accent,
+.identity-status {
+    min-height: 1.5em;
+    margin: -3px 0 12px;
+    color: var(--muted);
+    font: 11px 'Fira Code', monospace;
+    letter-spacing: .02em;
+    transition: color .25s ease, opacity .25s ease;
+}
+
+.identity-status[data-state="error"] {
+    color: #f0b45b;
+}
+
+.identity-status[data-state="success"] {
+    color: var(--green);
+}
+
 .role {
     color: var(--green)
 }
