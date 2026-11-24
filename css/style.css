@@ -80,9 +80,13 @@ body {
 .brand-mark {
     color: var(--green);
     margin-right: 8px
+    
 }
 
-.accent,
+.accent {
+    color: var(--green);
+}
+
 .identity-status {
     min-height: 1.5em;
     margin: -3px 0 12px;
