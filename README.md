@@ -40,13 +40,11 @@ O projeto busca apresentar não apenas quem sou, mas também como trabalho, quai
 
 ## Technologies & Tools
 
-As tecnologias utilizadas no desenvolvimento e na manutenção do projeto incluem:
-
 | Tecnologia | Aplicação |
 |---|---|
 | HTML5 | Estruturação da interface |
-| CSS3 | Estilização, layout e animações |
-| JavaScript | Interatividade e lógica do terminal |
+| CSS3 | Estilização, layout, temas e animações |
+| JavaScript | Interatividade, terminal e efeitos visuais |
 | Git | Controle de versão |
 | GitHub | Hospedagem e gerenciamento do código |
 
@@ -55,24 +53,19 @@ As tecnologias utilizadas no desenvolvimento e na manutenção do projeto inclue
 ## Features
 
 ### Interactive Terminal
-
-Interface inspirada em terminais de sistemas operacionais, permitindo explorar o portfólio por meio de comandos.
+Interface inspirada em terminais de sistemas operacionais, com sequência de boot, histórico de comandos, autocomplete e atalhos.
 
 ### Command Navigation
+Navegação por comandos para acessar informações, projetos, skills e contatos.
 
-Navegação por comandos para acessar informações, projetos e contatos.
-
-### Responsive Interface
-
-Adaptação da interface para diferentes tamanhos de tela e dispositivos.
+### Themes
+Troca de tema de cores em tempo real (`theme green|cyan|purple|amber`).
 
 ### Visual Effects
+Matrix rain nas laterais, rede de partículas, scanlines sutis e animações de entrada.
 
-Elementos visuais e animações que complementam a experiência de navegação.
-
-### Personal Portfolio
-
-Apresentação de informações profissionais, conhecimentos técnicos, projetos e canais de contato.
+### Responsive Interface
+Adaptação completa para diferentes tamanhos de tela e dispositivos touch.
 
 ---
 
@@ -80,10 +73,17 @@ Apresentação de informações profissionais, conhecimentos técnicos, projetos
 
 | Command | Description |
 |---|---|
-| `help` | Exibe os comandos disponíveis |
+| `help` | Exibe todos os comandos disponíveis |
 | `about` | Apresenta informações sobre mim |
-| `projects` | Exibe meus projetos |
-| `social` | Apresenta meus canais de contato |
+| `projects` | Exibe projetos e link para o GitHub |
+| `skills` | Tecnologias com barras de nível |
+| `social` / `contact` | Links e informações de contato |
+| `neofetch` | Informações do “sistema” estilo neofetch |
+| `theme <cor>` | Muda o tema (green, cyan, purple, amber) |
+| `matrix [on\|off\|boost]` | Controla o efeito matrix |
+| `fortune` | Exibe uma citação aleatória |
+| `whoami` / `ls` / `pwd` / `date` / `uptime` | Comandos clássicos de terminal |
+| `history` / `version` / `echo` / `sudo` | Extras e easter eggs |
 | `clear` | Limpa o terminal |
 
 ---
@@ -91,19 +91,19 @@ Apresentação de informações profissionais, conhecimentos técnicos, projetos
 ## Project Structure
 
 ```text
-JLM.DEV/
-│
+jlmzin.github.io/
 ├── assets/
-│   └── icons/
-│
+│   ├── icons/
+│   └── images/
+├── css/
+│   └── style.css
+├── js/
+│   ├── terminal.js
+│   └── effects.js
+├── favicon.svg
 ├── index.html
-├── style.css
-├── script.js
-│
 └── README.md
 ```
-
-*Estrutura ilustrativa: ajuste os diretórios conforme a organização atual do repositório.*
 
 ---
 
@@ -117,21 +117,12 @@ JLM.DEV/
 
 ### Installation
 
-Clone o repositório:
-
 ```bash
-git clone https://github.com/jlmzin/jlm-dev.git
+git clone https://github.com/jlmzin/jlmzin.github.io.git
+cd jlmzin.github.io
 ```
 
-Entre no diretório:
-
-```bash
-cd jlm-dev
-```
-
-Abra o projeto utilizando o Visual Studio Code ou seu editor preferido.
-
-Para executar localmente, utilize a extensão Live Server ou abra o arquivo `index.html` diretamente no navegador.
+Abra o `index.html` no navegador ou use a extensão Live Server.
 
 ---
 
@@ -148,6 +139,7 @@ Busco desenvolver soluções, aprofundar conhecimentos técnicos e construir pro
 ### Connect with me
 
 - **GitHub:** [github.com/jlmzin](https://github.com/jlmzin)
+- **LinkedIn:** [juan-lima-machado](https://www.linkedin.com/in/juan-lima-machado/)
 - **Instagram:** [@jlm.rss](https://www.instagram.com/jlm.rss/)
 - **E-mail:** [juanllimacont1@gmail.com](mailto:juanllimacont1@gmail.com)
 
